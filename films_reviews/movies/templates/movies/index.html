@@ -1,0 +1,13 @@
+{% extends "movies/base.html" %}
+
+{% block content %}
+    <section class="jumbotron text-center" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="jumbotron-heading">Отзывы о фильмах</h1>
+            <p class="lead text-muted">На этом сайте вы можете оставить свой отзыв о фильме</p>
+            <p>
+                <a href="{% url 'movies_list' %}" class="btn btn-primary my-2">К фильмам</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}

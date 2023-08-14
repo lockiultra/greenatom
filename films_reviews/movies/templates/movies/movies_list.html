@@ -1,0 +1,17 @@
+{% extends "movies/base.html" %}
+{% block content %}
+    <h1>{{ title }}</h1>    
+    {% for movie in object_list %}
+        <div class="card text-center">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text">{{ movie.description }}</p>
+            <a href="{% url 'movie_detail' movie.id %}" class="btn btn-primary">К фильму</a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

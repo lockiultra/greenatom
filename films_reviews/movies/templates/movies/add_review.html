@@ -1,0 +1,18 @@
+{% extends "movies/base.html" %}
+
+{% load i18n widget_tweaks %}
+
+{% block content %}
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">{{ movie.title }}</h1>
+        <p class="lead font-weight-normal">Добавьте свой отзыв</p>
+    </div>
+    <form action="{% url 'add_review' movie.id %}" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-text">Отзыв</span>
+            {{ form.content|attr:"class:form-control" }}
+        </div>
+        <button type="submit" class="btn btn-outline-secondary" style="margin: 20px;">Добавить отзыв</button>
+    </form>
+{% endblock %}
